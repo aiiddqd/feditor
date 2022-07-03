@@ -4,8 +4,8 @@ namespace AApps\FrontEditor\Form;
 
 const NONCE_FIELD = 'aapps_form_front_editor';
 
-add_action('aapps-front-editor-fields', __NAMESPACE__ . '\\add_content_textarea');
-add_action('aapps-front-editor-fields', __NAMESPACE__ . '\\add_input_submit');
+add_action('aapps_front_editor_fields', __NAMESPACE__ . '\\add_content_textarea');
+add_action('aapps_front_editor_fields', __NAMESPACE__ . '\\add_input_submit');
 add_action('init', __NAMESPACE__ . '\\save_data');
 
 
@@ -37,7 +37,7 @@ function save_data(){
     // $save_data['post_title'] = wp_strip_all_tags($data['post_content']);
     $save_data['post_status'] = $data['publish'];
 
-    $save_data = apply_filters( 'aapps-front-editor-post-save', $save_data, $data );
+    $save_data = apply_filters( 'aapps_front_editor_post_save_data', $save_data, $data );
 
     $post_id = wp_insert_post( $save_data );
     
@@ -96,7 +96,7 @@ function render_form($args){
         <div class="aapps-front-editor">
             <form method="post" enctype="multipart/form-data">
                 <?php 
-                    do_action('aapps-front-editor-fields', $args);
+                    do_action('aapps_front_editor_fields', $args);
                     wp_nonce_field( 'update', NONCE_FIELD );
                 ?>
                 <input type="hidden" name="post_id" value="<?= get_post_id(); ?>" />
