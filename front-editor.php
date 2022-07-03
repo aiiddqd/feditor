@@ -1,59 +1,26 @@
 <?php
 /*
 * Plugin Name: AApps - Front Editor
-* Description: Front editor for WP
+* Description: Front editor for WP - shortcode [aapps-front-editor]
 * Author: uptimizt
-* Version: 0.1
+* Version: 0.2
 */
 
-require_once __DIR__ . '/includes/Meta.php';
-require_once __DIR__ . '/includes/FieldUrl.php';
+require_once __DIR__ . '/includes/Form.php';
 
-add_shortcode('fetest', function () {
 
-    ob_start(); ?>
+use AApps\FrontEditor\Form;
 
-    <div class="feapp">loading...</div>
+use function AApps\FrontEditor\Form\render_form;
 
-<?php return ob_get_clean();
+add_shortcode('aapps-front-editor', function () {
+    $args = [];
+    return render_form($args);
 });
 
 
-add_action('wp_enqueue_scripts', function () {
+function aa_fe_get_config(){
+    $config = [];
 
-
-    if (!is_singular()) {
-        return;
-    }
-    
-    $post = get_post();
-
-    if (!has_shortcode($post->post_content, 'fetest')) {
-        return;
-    }
-
-    $css_files = [
-        'bundle' => '/frontend/public/build/bundle.css',
-        // 'shared' => '/frontend/public/build/shared.css'
-    ];
-    foreach ($css_files as $key => $file_path) {
-        $ver = filemtime(__DIR__ . $file_path);
-        wp_enqueue_style('fedev-' . $key, $src = plugins_url($file_path, __FILE__), $deps = [], $ver);
-    
-    }
-
-    $app_js_path = '/frontend/public/build/bundle.js';
-    wp_enqueue_script('editorFeMd', plugins_url($app_js_path, __FILE__), [], filemtime(__DIR__ . $app_js_path), true);
-    $config_app = [
-        'root' => esc_url_raw( rest_url() ),
-        'nonce' => wp_create_nonce( 'wp_rest' ),
-        'pageUrl' => get_permalink($post),
-        'toolbarEnable' => false,
-        'fileCoverEnable' => false,
-    ];
-
-    $config_app = apply_filters( 'editor_fe_md_config', $config_app);
-
-    wp_localize_script( 'editorFeMd', 'editorFeMdConfig', $config_app);
-});
-
+    return apply_filters( 'aa_fronteditor_config', $config );
+}
