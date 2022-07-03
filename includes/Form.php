@@ -5,7 +5,7 @@ namespace AApps\FrontEditor\Form;
 const NONCE_FIELD = 'aapps_form_front_editor';
 
 add_action('aapps_front_editor_fields', __NAMESPACE__ . '\\add_content_textarea');
-add_action('aapps_front_editor_fields', __NAMESPACE__ . '\\add_input_submit');
+add_action('aapps_front_editor_fields', __NAMESPACE__ . '\\add_input_submit', 50);
 add_action('init', __NAMESPACE__ . '\\save_data');
 
 
