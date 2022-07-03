@@ -3,7 +3,7 @@
 * Plugin Name: AApps - Front Editor
 * Description: Front editor for WP - shortcode [aapps-front-editor]
 * Author: uptimizt
-* Version: 0.2
+* Version: 0.3
 */
 
 require_once __DIR__ . '/includes/Form.php';
