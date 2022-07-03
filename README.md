@@ -1,5 +1,9 @@
 # aapp-front-editor
 
+## todo
+- improve API
+- add AJAX option
+
 
 ## config
 
