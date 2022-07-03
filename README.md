@@ -2,6 +2,8 @@
 
 ## roadmap
 - improve API
+- field Post Title (to do)
+- field Category
 - add AJAX option
 - addon MD https://github.com/Saul-Mirone/milkdown
 
