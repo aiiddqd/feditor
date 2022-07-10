@@ -92,15 +92,17 @@ function get_post_id(){
 function render_form($args){
     ob_start();
     global $wp;
+
+    $post_id = get_post_id();
     ?>
 
         <div class="aapps-front-editor">
             <form method="post" enctype="multipart/form-data">
                 <?php 
-                    do_action('aapps_front_editor_fields', $args);
+                    do_action('aapps_front_editor_fields', $args, $post_id);
                     wp_nonce_field( 'update', NONCE_FIELD );
                 ?>
-                <input type="hidden" name="post_id" value="<?= get_post_id(); ?>" />
+                <input type="hidden" name="post_id" value="<?= $post_id ?>" />
             </form>
         </div>
 
