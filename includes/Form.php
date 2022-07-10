@@ -69,6 +69,7 @@ function add_content_textarea(){
     if($post_id = get_post_id()){
         $content = get_post($post_id)->post_content;
     }
+    $content = apply_filters('aapps_front_editor_content', $content, $post_id);
 
     wp_editor( $content, 'post_content', $args ); 
 
