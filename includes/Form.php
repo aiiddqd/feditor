@@ -99,7 +99,7 @@ function render_form($args){
         <div class="aapps-front-editor">
             <form method="post" enctype="multipart/form-data">
                 <?php 
-                    do_action('aapps_front_editor_fields', $args, $post_id);
+                    do_action('aapps_front_editor_fields', $post_id, $args);
                     wp_nonce_field( 'update', NONCE_FIELD );
                 ?>
                 <input type="hidden" name="post_id" value="<?= $post_id ?>" />
