@@ -9,8 +9,6 @@ add_action('aapps_front_editor_fields', __NAMESPACE__ . '\\add_input_submit', 50
 add_action('init', __NAMESPACE__ . '\\save_data');
 
 
-
-
 function save_data(){
     if (empty( $_POST[NONCE_FIELD]) ){
         return;
@@ -78,20 +76,6 @@ function add_content_textarea(){
 
 }
 
-
-function get_post_id(){
-    $post_id = $_GET['id'] ?? null;
-    $post_id = intval($post_id);
-    if(empty($post_id)){
-        return 0;
-    }
-    if( $post = get_post($post_id)){
-        return $post->ID;
-    }
-
-    return 0;
-}
-
 function render_form($args){
     ob_start();
     global $wp;
@@ -113,26 +97,15 @@ function render_form($args){
 }
 
 
-function get_data(){
-
-    $data = null;
+function get_post_id(){
     $post_id = $_GET['id'] ?? null;
-
     $post_id = intval($post_id);
-
     if(empty($post_id)){
-        return $data;
+        return 0;
+    }
+    if( $post = get_post($post_id)){
+        return $post->ID;
     }
 
-    if( ! $post = get_post($post_id)){
-        return $data;
-    }
-
-    $data = [
-        'post_id' => $post_id,
-        'post' => $post,
-    ];
-
-    return $data;
+    return 0;
 }
-

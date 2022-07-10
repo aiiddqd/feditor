@@ -1,5 +1,7 @@
 # aapp-front-editor
 
+Front Editor, Frontend Editor, FE Editor, feEditor, FEE
+
 ## roadmap
 - improve API
 - field Post Title (to do)
