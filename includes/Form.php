@@ -39,7 +39,7 @@ function save_data(){
 
     $post_id = wp_insert_post( $save_data );
 
-    do_action('aapps_front_editor_post_save_after', $post_id);
+    do_action('aapps_front_editor_post_save_after', $post_id, $data);
     
     
     $url_redirect = site_url($data['_wp_http_referer']);
