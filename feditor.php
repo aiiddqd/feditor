@@ -81,16 +81,11 @@ function save_data(){
     }
 
     $save_data['post_author'] = $user_id;
-    $save_data['post_content'] = $data['post_content'];
-    // $save_data['post_title'] = wp_strip_all_tags($data['post_content']);
-    $save_data['post_status'] = $data['publish'];
-
     $save_data = apply_filters( 'feditor_post_save_data', $save_data, $data );
 
     $post_id = wp_insert_post( $save_data );
 
     do_action('feditor_post_save_data_after', $post_id, $data);
-    
     
     $url_redirect = site_url($data['_wp_http_referer']);
     $url_redirect = add_query_arg('id', $post_id, $url_redirect);
