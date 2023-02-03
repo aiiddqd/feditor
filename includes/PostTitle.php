@@ -2,7 +2,7 @@
 
 namespace Feditor\PostTitle;
 
-add_action('feditor_fields', __NAMESPACE__ . '\\render_input', 5);
+add_action('feditor_fields', __NAMESPACE__ . '\\render_input');
 add_filter('feditor_post_save_data', __NAMESPACE__ . '\\save_data', 10, 2);
 
 

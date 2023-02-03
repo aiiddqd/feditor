@@ -3,7 +3,7 @@
 namespace Feditor\Main;
 
 
-add_action('feditor_fields', __NAMESPACE__ . '\\add_content_textarea');
+add_action('feditor_fields', __NAMESPACE__ . '\\add_content_textarea', 20);
 add_action('feditor_fields', __NAMESPACE__ . '\\add_status_options', 45);
 add_action('feditor_fields', __NAMESPACE__ . '\\add_input_submit', 50);
 add_filter('feditor_post_save_data', __NAMESPACE__ . '\\save_data', 10, 2);
