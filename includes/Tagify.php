@@ -68,14 +68,11 @@ function render_input($post_id)
 
 function save_data($post_id, $data)
 {
-
     $tags = $data['feditor-tags'] ?? null;
 
     if(empty($tags)){
         return;
     }
-
-    // var_dump($tags);
 
     $tags = stripslashes($tags);
     $tags = json_decode($tags, true);
@@ -86,9 +83,6 @@ function save_data($post_id, $data)
     }
 
     wp_set_post_tags($post_id, $tags_list);
-    // var_dump($tags_list);
-
-    // exit;
 }
 
 
