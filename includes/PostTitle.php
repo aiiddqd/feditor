@@ -26,7 +26,7 @@ function render_input($post_id){
         $title = get_post($post_id)->post_title ?? '';
     }
     
-    printf('<input type="text" name="post_title" class="form-control" value="%s" />', $title);
+    printf('<input type="text" name="post_title" placeholder="New post title here..." class="form-control" value="%s" />', $title);
 
 }
 

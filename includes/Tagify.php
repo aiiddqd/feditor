@@ -44,7 +44,7 @@ function render_input($post_id)
     // var_dump($tags_json);
     ?>
     <div>
-        <input name='feditor-tags' class='some_class_name' placeholder='write some tags' value='<?= $tags_texts ?>'>
+        <input name='feditor-tags' class='feditor-tags form-control' placeholder='write some tags' value='<?= $tags_texts ?>'>
     </div>
 
     <script>
