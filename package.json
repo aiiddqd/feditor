@@ -1,0 +1,20 @@
+{
+    "name": "content-kit",
+    "version": "1.0.0",
+    "scripts": {
+      "dev": "node-sass -rw . -o ."
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/uptimizt/content-kit.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/uptimizt/content-kit/issues"
+    },
+    "homepage": "https://github.com/uptimizt/content-kit#readme",
+    "dependencies": {
+      "node-sass": "^8.0.0"
+    }
+  }
