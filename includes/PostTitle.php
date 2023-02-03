@@ -20,7 +20,11 @@ function render_input($post_id){
     if(empty($config['title_enable'])){
         return;
     }
-    $title = get_post($post_id)->post_title ?? '';
+    if(empty($post_id)){
+        $title = '';
+    } else {
+        $title = get_post($post_id)->post_title ?? '';
+    }
     
     printf('<input type="text" name="post_title" class="form-control" value="%s" />', $title);
 

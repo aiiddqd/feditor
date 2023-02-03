@@ -22,7 +22,11 @@ function save_data($save_data, $data){
 }
 
 function add_status_options($post_id){
-    $status = get_post($post_id)->post_status ?? 'draft';
+    if(empty($post_id)){
+        $status = 'draft';
+    } else {
+        $status = get_post($post_id)->post_status ?? 'draft';
+    }
 ?>
     <div>
       <input type="radio" id="post-draft" name="post_status" value="draft" <?php checked( 'draft', $status ) ?>>
