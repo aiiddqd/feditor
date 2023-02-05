@@ -4,7 +4,7 @@
 - simple for start
 - extensible
 
-## roadmap
+# roadmap
 - improve API
 - field Post Title (to do)
 - field Category
@@ -12,14 +12,19 @@
 - addon MD https://github.com/Saul-Mirone/milkdown
 
 
-## config
+# config
 
+## disable title
 ```
 add_filter('feditor_config', function($config){
     $config['title_enable'] = false;
     return $config;
 });
 ```
+
+## add user for no auth
+
+`[feditor user_id=123]`
 
 ## simple add fields
 

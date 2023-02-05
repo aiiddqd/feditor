@@ -20,11 +20,17 @@ add_action('init', __NAMESPACE__ . '\\save_data');
 
 
 add_shortcode('feditor', function ($args = []) {
-    $user_id = get_current_user_id();
+
+    if(empty($args['user_id'])){
+        $user_id = get_current_user_id();
+    } else {
+        $user_id = intval($args['user_id']);
+    }
+
     if(empty($user_id)){
         return 'no user auth';
     }
-    
+
     $post_id = get_post_id();
     ob_start();
     ?>
