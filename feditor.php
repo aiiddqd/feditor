@@ -86,6 +86,8 @@ function save_data()
     $save_data['post_author'] = $user_id;
     $save_data = apply_filters('feditor_post_save_data', $save_data, $data);
 
+    // var_dump($save_data);
+    // exit;
     $post_id = wp_insert_post($save_data);
 
     do_action('feditor_post_save_data_after', $post_id, $data);
