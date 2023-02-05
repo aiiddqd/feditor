@@ -14,6 +14,10 @@
 
 # config
 
+## just add editor
+- add page
+- add shortcode `[feditor]`
+
 ## disable title
 ```
 add_filter('feditor_config', function($config){
