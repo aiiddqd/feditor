@@ -26,10 +26,17 @@ add_filter('feditor_config', function($config){
 });
 ```
 
-## add user for no auth
-
-`[feditor user_id=123]`
 
 ## simple add fields
 
 example includes/PostTitle.php
+
+# Shortcode args
+
+## only_draft
+
+`[feditor only_draft=1]`
+
+## add user for no auth
+
+`[feditor user_id=123]`
