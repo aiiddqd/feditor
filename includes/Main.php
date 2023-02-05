@@ -18,8 +18,15 @@ namespace Feditor\Main {
         <div class="feditor-save-group wp-block-group">
             <div class="wp-block-group is-layout-flex">
                 <div class="wp-block-group">
-                    <input type="submit" id="submit" value="Save" />
+                    <span>
+                        <input type="submit" id="submit" value="Save" />
+                    </span>
                 </div>
+                <?php if ($status == 'publish'): ?>
+                    <span>
+                        <a href="<?= get_permalink($post_id) ?>" target="_blank" rel="noopener noreferrer">View</a>
+                    </span>
+                <?php endif; ?>
                 <!-- /wp:group -->
 
                 <!-- wp:group {"layout":{"type":"constrained"}} -->
