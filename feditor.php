@@ -92,6 +92,8 @@ function save_data()
 
     do_action('feditor_post_save_data_after', $post_id, $data);
 
+    update_post_meta($post_id, 'feditor_enable', 1);
+
     $url_redirect = site_url($data['_wp_http_referer']);
     $url_redirect = add_query_arg('id', $post_id, $url_redirect);
     wp_redirect($url_redirect);

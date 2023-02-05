@@ -17,6 +17,7 @@ namespace Feditor\Content {
             'teeny' => true,
             'tinymce' => false,
             'quicktags' => false,
+            'editor_class' => 'form-control',
             'drag_drop_upload' => false
         ];
 
@@ -26,6 +27,7 @@ namespace Feditor\Content {
         }
         $content = apply_filters('feditor_content', $content, $post_id);
         $args = apply_filters('feditor_wp_editor_args', $args, $post_id);
+
 
         wp_editor($content, 'post_content', $args);
 
