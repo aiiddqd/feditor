@@ -12,34 +12,6 @@ namespace Feditor\Config {
     add_action('admin_init', __NAMESPACE__ . '\\add_setting_base_css');
 
 
-    add_action('admin_menu', function () {
-
-        add_options_page(
-            'Feditor Options',
-            'Feditor',
-            'manage_options',
-            OPTION_PAGE,
-            function () {
-                ?>
-                <form method="POST" action="options.php">
-
-                    <h1><?= __( 'Feditor Config', 'feditor' ) ?></h1>
-                    <?php 
-                    do_action('feditor_settings_after_header');
-                    settings_fields(OPTION_PAGE);
-                    do_settings_sections(OPTION_PAGE);
-                    submit_button();
-                    ?>
-                </form>
-                <?php 
-            }
-        );
-
-        add_settings_section( 'default', '', '', OPTION_PAGE );
-
-    });
-
-
     function add_setting_base_css(){
         
         add_settings_field(
@@ -73,5 +45,33 @@ namespace Feditor\Config {
         
         return apply_filters('feditor_config', $config);
     }
+
+    add_action('admin_menu', function () {
+
+        add_options_page(
+            'Feditor Options',
+            'Feditor',
+            'manage_options',
+            OPTION_PAGE,
+            function () {
+                ?>
+                <form method="POST" action="options.php">
+
+                    <h1><?= __( 'Feditor Config', 'feditor' ) ?></h1>
+                    <?php 
+                    do_action('feditor_settings_after_header');
+                    settings_fields(OPTION_PAGE);
+                    do_settings_sections(OPTION_PAGE);
+                    submit_button();
+                    ?>
+                </form>
+                <?php 
+            }
+        );
+
+        add_settings_section( 'default', '', '', OPTION_PAGE );
+
+    });
+
 
 }
