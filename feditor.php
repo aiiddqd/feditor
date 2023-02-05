@@ -51,15 +51,6 @@ function get_post_id()
     return 0;
 }
 
-function get_config()
-{
-    $config = [
-        'base_css' => true,
-        'title_enable' => true,
-    ];
-
-    return apply_filters('feditor_config', $config);
-}
 
 function save_data()
 {
@@ -100,7 +91,7 @@ function save_data()
 
 
 add_action('wp_enqueue_scripts', function () {
-    $config = get_config();
+    $config = \Feditor\Config\get_config();
     if (empty($config['base_css'])) {
         return;
     }

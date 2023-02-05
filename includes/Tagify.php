@@ -2,10 +2,10 @@
 
 namespace Feditor\Tagify {
 
-    add_action('feditor_fields', __NAMESPACE__ . '\\render_input', 11);
-    add_action('feditor_post_save_data_after', __NAMESPACE__ . '\\save_data', 10, 2);
+    add_action('feditor_fields', __NAMESPACE__ . '\\view', 11);
+    add_action('feditor_post_save_data_after', __NAMESPACE__ . '\\save', 10, 2);
 
-    function render_input($post_id)
+    function view($post_id)
     {
         if ($post_id) {
             $tags = wp_get_post_tags($post_id);
@@ -67,7 +67,7 @@ namespace Feditor\Tagify {
     <?php
     }
 
-    function save_data($post_id, $data)
+    function save($post_id, $data)
     {
         $tags = $data['feditor-tags'] ?? null;
 
