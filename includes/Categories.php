@@ -2,16 +2,17 @@
 
 namespace Feditor\Categories {
 
-    add_action('feditor_fields', __NAMESPACE__ . '\\view', 15);
+    add_action('feditor_fields', __NAMESPACE__ . '\\view', 15, 2);
     add_filter('feditor_post_save_data', __NAMESPACE__ . '\\save', 10, 2);
     add_action('admin_init', __NAMESPACE__ . '\\add_settings', 22);
 
 
-    function view($post_id){
+    function view($post_id, $args){
 
-        if(is_disable()){
+        if(is_disable($args)){
             return;
         }
+
 
         $category_selected = get_option('default_category');
 
@@ -46,10 +47,16 @@ namespace Feditor\Categories {
         return $save_data;
     }
 
-    function is_disable()
+    function is_disable($args = [])
     {
-        return \Feditor\Config\get_config()['categories_disable'] ?? false;
+        $is_disable = false;
+        $is_disable = \Feditor\Config\get_config()['categories_disable'] ?? false;
+        if($args['default_category'] ?? false){
+            $is_disable = true;
+        }
+        return $is_disable;
     }
+
     function add_settings(){
 
         add_settings_field(

@@ -40,3 +40,7 @@ example includes/PostTitle.php
 ## add user for no auth
 
 `[feditor user_id=123]`
+
+## hide select category - only default
+
+`[feditor default_category=1]`
