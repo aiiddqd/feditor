@@ -20,6 +20,11 @@ add_action('init', __NAMESPACE__ . '\\save_data');
 
 
 add_shortcode('feditor', function ($args = []) {
+    $user_id = get_current_user_id();
+    if(empty($user_id)){
+        return 'no user auth';
+    }
+    
     $post_id = get_post_id();
     ob_start();
     ?>
@@ -106,4 +111,8 @@ add_action('wp_enqueue_scripts', function () {
         $file_version = filemtime($file_path);
         wp_enqueue_style('feditor-style', $file_url, [], $file_version);
     }
+});
+
+add_action('feditor_settings_after_header', function () {
+    printf('<a href="%s" target="_blank">GitHub</a>', 'https://github.com/ddev-app/feditor');
 });
