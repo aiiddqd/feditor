@@ -4,6 +4,9 @@
 - simple for start
 - extensible
 
+![Frontend Editor WordPress](assets/thumbnail.png?raw=true "Frontend Editor WordPress")
+
+
 # addons
 
 here https://github.com/topics/feditor-addons
