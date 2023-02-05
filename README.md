@@ -1,6 +1,8 @@
-# aapp-front-editor
+# Feditor - fronted editor for WordPress
 
-Front Editor, Frontend Editor, FE Editor, feEditor, FEE
+- flexible API
+- simple for start
+- extensible
 
 ## roadmap
 - improve API
@@ -13,12 +15,12 @@ Front Editor, Frontend Editor, FE Editor, feEditor, FEE
 ## config
 
 ```
-add_filter('aa_fronteditor_config', function($config){
+add_filter('feditor_config', function($config){
     $config['title_enable'] = false;
     return $config;
 });
 ```
 
-## add fields
+## simple add fields
 
 example includes/PostTitle.php
