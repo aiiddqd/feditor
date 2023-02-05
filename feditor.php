@@ -3,7 +3,7 @@
  * Plugin Name: @ Feditor
  * Description: Front editor for WP - shortcode [feditor]
  * Author: uptimizt
- * Version: 0.5
+ * Version: 0.6
  */
 
 namespace Feditor;
