@@ -1,4 +1,4 @@
-# Feditor - frontemd editor for WordPress
+# Feditor - frontend post editor for WordPress
 
 - flexible API
 - simple for start
