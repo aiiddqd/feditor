@@ -10,8 +10,6 @@ namespace Feditor;
 
 const NONCE_FIELD = 'feditor_nonce';
 
-// require_once __DIR__ . '/includes/Form.php';
-// require_once __DIR__ . '/includes/PostTitle.php';
 $files = glob(__DIR__ . '/includes/*.php');
 foreach ($files as $file) {
     require_once $file;
