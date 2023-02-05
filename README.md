@@ -12,10 +12,10 @@
 here https://github.com/topics/feditor-addons
 
 # roadmap
-- improve API
-- add AJAX option
-- addon MD https://github.com/Saul-Mirone/milkdown
-- [x] field Post Title (to do)
+- [ ] improve API
+- [ ] add AJAX option
+- [ ] addon MD https://github.com/Saul-Mirone/milkdown
+- [x] field Post Title
 - [x] field Category
 
 
