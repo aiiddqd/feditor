@@ -4,9 +4,7 @@ namespace Feditor\Categories {
 
     add_action('feditor_fields', __NAMESPACE__ . '\\view', 15);
     add_filter('feditor_post_save_data', __NAMESPACE__ . '\\save', 10, 2);
-
     add_action('admin_init', __NAMESPACE__ . '\\add_settings', 22);
-
 
 
     function view($post_id){
