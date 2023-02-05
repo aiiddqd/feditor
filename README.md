@@ -4,6 +4,10 @@
 - simple for start
 - extensible
 
+# addons
+
+here https://github.com/topics/feditor-addons
+
 # roadmap
 - improve API
 - field Post Title (to do)
