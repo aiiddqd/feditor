@@ -2,14 +2,11 @@
 
 namespace Feditor\Content {
 
-    add_action('feditor_fields', __NAMESPACE__ . '\\view_content_textarea', 20);
-    // add_action('feditor_fields', __NAMESPACE__ . '\\view_publish_group', 50);
+    add_action('feditor_fields', __NAMESPACE__ . '\\view', 20);
     add_filter('feditor_post_save_data', __NAMESPACE__ . '\\save', 10, 2);
 
-    
 
-
-    function view_content_textarea($post_id)
+    function view($post_id)
     {
         $args = [
             'wpautop' => true,

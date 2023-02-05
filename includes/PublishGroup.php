@@ -4,7 +4,6 @@ namespace Feditor\PublishGroup {
 
     add_action('feditor_fields', __NAMESPACE__ . '\\view', 55, 2);
     add_filter('feditor_post_save_data', __NAMESPACE__ . '\\save', 10, 2);
-    // add_action('admin_init', __NAMESPACE__ . '\\add_settings');
 
 
     function view($post_id, $args)

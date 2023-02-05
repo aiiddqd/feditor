@@ -22,15 +22,18 @@ namespace Feditor\Tagify {
             $tags_texts = '';
         }
 
-        $tags = get_terms(
-            array(
-                'taxonomy' => 'post_tag',
-                'orderby' => 'count',
-                'order' => 'DESC',
-                'hide_empty' => true,
-                'number' => 55,
-            )
-        );
+        if (!$tags = get_transient('feditor_tags')) {
+            $tags = get_terms(
+                array(
+                    'taxonomy' => 'post_tag',
+                    'orderby' => 'count',
+                    'order' => 'DESC',
+                    'hide_empty' => true,
+                    'number' => 333,
+                )
+            );
+            set_transient('feditor_tags', $tags, HOUR_IN_SECONDS);
+        }
 
         $tags_text = [];
         foreach ($tags as $tag) {
